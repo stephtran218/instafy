@@ -17,16 +17,19 @@ struct ContentView: View {
             VStack {
                 Text("𝗜𝗻𝘀𝘁𝗮𝗳𝘆 [◉°]")
                     .font(.system(size: 40))
-                    .padding(.bottom, 2)
+                    .padding(.bottom, 140 )
                 Text("𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝗯𝗮𝗰𝗸")
                     .font(.system(size: 23))
                     .padding(.trailing, 200)
+                    .padding(.top, -50)
                 TextField("Email", text: $email)
                     .padding()
                     .border(Color.gray)
+                    .padding(.top, -20)
                 TextField("Password", text: $password)
                     .padding()
                     .border(Color.gray)
+                    .padding(.top, 10)
                 NavigationLink(destination: HomePageView(), label: {
                     Text("Login")
                         .padding()
@@ -34,10 +37,11 @@ struct ContentView: View {
                         .background(Color.black)
                         .foregroundColor(.white)
                         .cornerRadius(15)
+                        .padding(.top, 20)
                 })
                 Text("Forgot your password?")
                     .padding(.trailing, 180)
-                    .padding(.top, 30)
+                    .padding(.top, 20)
                 
             }
         }

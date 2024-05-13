@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct HomePageView: View {
+//    @Binding var feedArray: [Image]
+    @State var posts: [Image] = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            Text("𝗜𝗻𝘀𝘁𝗮𝗳𝘆 [◉°]")
+                .font(.system(size: 30))
+                .padding(.bottom, 2)
+//            ForEach(posts.indices, id: \.self){i in
+//                Button(action: { handleClick(index: i)}, label:
+//                        PostView(post: posts[i])
+//                    
+//                })
+                
+            }
+        }
+    func handleClick(){
+        
     }
+        
 }
 
 #Preview {
-    HomePageView()
+    HomePageView(/*feedArray: .constant(posts)*/)
 }
