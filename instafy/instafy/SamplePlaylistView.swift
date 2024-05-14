@@ -50,14 +50,16 @@ struct SamplePlaylistView: View {
                 }) {
                     HStack {
                         Image("addBtn")
-                            .frame(width: 20, height: 20)
-                        Text("Add to this playlist")
-                            foregroundColor(.white)
-                        }
-//                        .padding(.trailing, 200) // Adjusted padding value
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                    Text("Add to this playlist")
+                        .foregroundColor(.white)
                     }
-                    .sheet(isPresented: $showingSheet){
-                        AddSongsSheetView()
+                    .frame(width: 330, height: 50)
+                    .padding(.trailing, 150)
+                }
+                .sheet(isPresented: $showingSheet){
+                    AddSongsSheetView()
                 }
                 HStack{
                     Image("ultraviolence")
@@ -142,8 +144,8 @@ struct SamplePlaylistView: View {
                             .foregroundColor(.white)
                     }
                     .padding(.trailing, 3)
-
                 }
+                
             }
         }
     }
