@@ -10,6 +10,7 @@
 		33D55E822BF26E7B000DF7F6 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D55E812BF26E7B000DF7F6 /* PostView.swift */; };
 		33D55E842BF27139000DF7F6 /* womenInStem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 33D55E832BF27139000DF7F6 /* womenInStem.jpg */; };
 		33D55E862BF27928000DF7F6 /* SamplePlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D55E852BF27928000DF7F6 /* SamplePlaylistView.swift */; };
+		33E08F392BF3B99700195279 /* AddSongsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E08F382BF3B99700195279 /* AddSongsSheetView.swift */; };
 		33F6FF352BEE6F8600BF99D1 /* instafyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6FF342BEE6F8600BF99D1 /* instafyApp.swift */; };
 		33F6FF372BEE6F8600BF99D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F6FF362BEE6F8600BF99D1 /* ContentView.swift */; };
 		33F6FF392BEE6F8800BF99D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33F6FF382BEE6F8800BF99D1 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		33D55E812BF26E7B000DF7F6 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		33D55E832BF27139000DF7F6 /* womenInStem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = womenInStem.jpg; sourceTree = "<group>"; };
 		33D55E852BF27928000DF7F6 /* SamplePlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePlaylistView.swift; sourceTree = "<group>"; };
+		33E08F382BF3B99700195279 /* AddSongsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongsSheetView.swift; sourceTree = "<group>"; };
 		33F6FF312BEE6F8600BF99D1 /* instafy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instafy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F6FF342BEE6F8600BF99D1 /* instafyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instafyApp.swift; sourceTree = "<group>"; };
 		33F6FF362BEE6F8600BF99D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				33F6FF642BEE7C0900BF99D1 /* HomePageView.swift */,
 				33D55E812BF26E7B000DF7F6 /* PostView.swift */,
 				33D55E852BF27928000DF7F6 /* SamplePlaylistView.swift */,
+				33E08F382BF3B99700195279 /* AddSongsSheetView.swift */,
 				33F6FF602BEE78DD00BF99D1 /* instafyLogo.png */,
 				33D55E832BF27139000DF7F6 /* womenInStem.jpg */,
 				33F6FF382BEE6F8800BF99D1 /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 				33F6FF372BEE6F8600BF99D1 /* ContentView.swift in Sources */,
 				33D55E862BF27928000DF7F6 /* SamplePlaylistView.swift in Sources */,
 				33F6FF652BEE7C0900BF99D1 /* HomePageView.swift in Sources */,
+				33E08F392BF3B99700195279 /* AddSongsSheetView.swift in Sources */,
 				33D55E822BF26E7B000DF7F6 /* PostView.swift in Sources */,
 				33F6FF352BEE6F8600BF99D1 /* instafyApp.swift in Sources */,
 			);
