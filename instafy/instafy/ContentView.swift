@@ -38,6 +38,9 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .padding(.top, 20)
+                        .onTapGesture {
+                            saveUserInfo(email: email, password: password)
+                        }
                 })
                 Text("Forgot your password?")
                     .padding(.trailing, 180)
@@ -46,6 +49,10 @@ struct ContentView: View {
             }
         }
         .padding()
+    }
+    
+    func saveUserInfo(email: String, password: String){
+        
     }
 }
 
