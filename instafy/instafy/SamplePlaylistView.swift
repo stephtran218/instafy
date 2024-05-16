@@ -39,11 +39,11 @@ struct SamplePlaylistView: View {
                     Image("spotifyShuffle")
                         .resizable()
                         .frame(width: 40, height: 40)
-                        .padding(.trailing, -20) // Adjusted padding value
+                        .padding(.trailing, -20)
                     Image("Spotify-Play-Button")
                         .resizable()
                         .frame(width: 45, height: 45)
-                        .padding(.leading, 20) // Adjusted padding value
+                        .padding(.leading, 20)
                 }
                 Button(action: {
                     showingSheet.toggle()

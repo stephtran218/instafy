@@ -8,39 +8,49 @@
 import SwiftUI
 
 struct CaptionView: View {
-    
-    let darkGray = Color(red: 88/255, green: 88/255, blue: 88/255)
-    
-    @State var chosenPic: Image
+        
+    @State var finalPic: Image
     @State var writtenCaption : String
     @State var newCaption: String = ""
+    @State private var isPosted: Bool = false
 
     var body: some View {
-        VStack{
-            Text("New Post")
-                .font(.system(size: 22))
-                .foregroundColor(.black)
-                .bold()
-                .padding(.top, -180)
-            chosenPic
-                .resizable()
-                .scaledToFill()
-                .frame(width: 280, height: 280)
-                .clipped()
-                .padding(.top, -130)
-            Text(writtenCaption)
-                .padding()
-                .foregroundColor(.black)
-                .bold()
-            TextField("Write your caption here...", text: $newCaption)
-                .frame(width: 280, height: 20)
-                .padding()
-                .foregroundColor(.black)
-                .border(Color.gray)
+        NavigationView{
+            VStack{
+                NavigationLink(destination: HomePageView(newPost: finalPic, newPlaylistName: writtenCaption , newCaption: newCaption), isActive: $isPosted){
+                    EmptyView()
+                }
+                Text("New Post")
+                    .font(.system(size: 22))
+                    .foregroundColor(.black)
+                    .bold()
+                    .padding(.top, -180)
+                finalPic
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 280, height: 280)
+                    .clipped()
+                    .padding(.top, -130)
+                Text(writtenCaption)
+                    .padding()
+                    .foregroundColor(.black)
+                    .bold()
+                TextField("Write your caption here...", text: $newCaption)
+                    .frame(width: 280, height: 20)
+                    .padding()
+                    .foregroundColor(.black)
+                    .border(Color.gray)
+            }
         }
+    }
+    func postPlaylist(chosenPic: Image, playlistTitle: String){
+        finalPic = chosenPic
+        writtenCaption = playlistTitle
+        newCaption = newCaption
+        isPosted = true
     }
 }
 
 #Preview {
-    CaptionView(chosenPic: Image("lockIn"), writtenCaption: "hi")
+    CaptionView(finalPic: Image("lockIn"), writtenCaption: "LOCK IN")
 }

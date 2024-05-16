@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var postArray: [PostInfo] = [
+        PostInfo(postedPic: Image("womenInStem"), postedPlaylistName: String("women in stem"), postedCaption: String("hey girl hey")),
+        PostInfo(postedPic: Image("bffr"), postedPlaylistName: String("bffr"), postedCaption: String("bffr")),
+        PostInfo(postedPic: Image("jrPromAye"), postedPlaylistName: String("face card"), postedCaption: String("face card ayeeee")),
+        PostInfo(postedPic: Image("gtfo"), postedPlaylistName: String("GTFO"), postedCaption: String("30 MILLIONDO"))
+    ]
+    
     var body: some View {
         
-        @State var email: String = ""
-        @State var password: String = ""
         
         NavigationView{
             VStack {
@@ -30,7 +39,7 @@ struct ContentView: View {
                     .padding()
                     .border(Color.gray)
                     .padding(.top, 10)
-                NavigationLink(destination: HomePageView(), label: {
+                NavigationLink(destination: HomePageView(postArray), label: {
                     Text("Login")
                         .padding()
                         .border(Color.black)
@@ -38,9 +47,7 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .cornerRadius(15)
                         .padding(.top, 20)
-                        .onTapGesture {
-                            saveUserInfo(email: email, password: password)
-                        }
+                        
                 })
                 Text("Forgot your password?")
                     .padding(.trailing, 180)
@@ -55,6 +62,8 @@ struct ContentView: View {
         
     }
 }
+
+
 
 #Preview {
     ContentView()

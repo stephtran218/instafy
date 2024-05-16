@@ -21,48 +21,43 @@ struct CreateAccView: View {
 
     var body: some View {
         
-        let darkGray = Color(red: 88/255, green: 88/255, blue: 88/255)
         
         NavigationView{
-            ZStack {
-//                darkGray
-//                    .ignoresSafeArea()
-                VStack {
-                    Text("𝗜𝗻𝘀𝘁𝗮𝗳𝘆 [◉°]")
-                        .font(.system(size: 40))
-                        .padding(.top, -100 )
-                        .foregroundColor(.black)
-                    Text("Create An Account")
-                        .font(.system(size: 25))
-                        .foregroundColor(.black)
-                        .font(.title)
-                        .bold()
-                        .padding(.bottom, 20)
-                    TextField("First Name", text:$personalInfo.firstName)
-                        .padding()
-                        .border(Color.gray)
-                    TextField("Last Name", text: $personalInfo.lastName)
-                        .padding()
-                        .border(Color.gray)
-                    TextField("Email", text: $personalInfo.email)
-                        .padding()
-                        .border(Color.gray)
-                    TextField("Username", text: $personalInfo.userName)
-                        .padding()
-                        .border(Color.gray)
-                    SecureField("Password", text: $personalInfo.password)
-                        .padding()
-                        .border(Color.gray)
-                    NavigationLink(destination: HomePageView(), label: {
-                        Text("Create Account")
-                            .padding()
-                            .foregroundColor(.black)
-                            .border(Color.black) // Border first
-                    })
+            VStack {
+                Text("𝗜𝗻𝘀𝘁𝗮𝗳𝘆 [◉°]")
+                    .font(.system(size: 40))
+                    .padding(.top, -100 )
+                    .foregroundColor(.black)
+                Text("Create An Account")
+                    .font(.system(size: 25))
+                    .foregroundColor(.black)
+                    .font(.title)
+                    .bold()
+                    .padding(.bottom, 20)
+                TextField("First Name", text:$personalInfo.firstName)
                     .padding()
-                }
-                .padding() // Add padding to the VStack
+                    .border(Color.gray)
+                TextField("Last Name", text: $personalInfo.lastName)
+                    .padding()
+                    .border(Color.gray)
+                TextField("Email", text: $personalInfo.email)
+                    .padding()
+                    .border(Color.gray)
+                TextField("Username", text: $personalInfo.userName)
+                    .padding()
+                    .border(Color.gray)
+                SecureField("Password", text: $personalInfo.password)
+                    .padding()
+                    .border(Color.gray)
+                NavigationLink(destination: HomePageView(newPost: <#T##Image#>, newPlaylistName: <#T##String#>, newCaption: <#T##String#>, posts: <#T##[Image]#>), label: {
+                    Text("Create Account")
+                        .padding()
+                        .foregroundColor(.black)
+                        .border(Color.black) // Border first
+                })
+                .padding()
             }
+            .padding()
         }
         
     }
