@@ -49,13 +49,13 @@ struct CreateAccView: View {
                 SecureField("Password", text: $personalInfo.password)
                     .padding()
                     .border(Color.gray)
-                NavigationLink(destination: HomePageView(newPost: <#T##Image#>, newPlaylistName: <#T##String#>, newCaption: <#T##String#>, posts: <#T##[Image]#>), label: {
-                    Text("Create Account")
-                        .padding()
-                        .foregroundColor(.black)
-                        .border(Color.black) // Border first
-                })
-                .padding()
+//                NavigationLink(destination: HomePageView(newPost: <#T##Image#>, newPlaylistName: <#T##String#>, newCaption: <#T##String#>, posts: <#T##[Image]#>), label: {
+//                    Text("Create Account")
+//                        .padding()
+//                        .foregroundColor(.black)
+//                        .border(Color.black) // Border first
+//                })
+//                .padding()
             }
             .padding()
         }

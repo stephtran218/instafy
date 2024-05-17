@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PostView: View {
     
-    let darkGray = Color(red: 88/255, green: 88/255, blue: 88/255)
     @State private var isLoaded: Bool = false
     @State private var imageToDisplay: Image = Image("")
     @State private var playlistName: String = ""
@@ -21,17 +20,19 @@ struct PostView: View {
     ]
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack {
                 Text("Post your playlist")
                     .font(.system(size: 27))
                     .foregroundColor(.black)
-                    .padding(.top, -70)
+                    .padding(.top, 50)
+                    .padding(.bottom, 30)
                 
                 // Loop through playlist items
                 ForEach(playlistItems.indices, id: \.self) { index in
-                    
-                    Button(action: {findImage(image: playlistItems[index].0, caption: playlistItems[index].1)}, label: {
+                    Button(action: {
+                        findImage(image: playlistItems[index].0, caption: playlistItems[index].1)
+                    }, label: {
                         HStack {
                             playlistItems[index].0
                                 .resizable()
@@ -40,26 +41,29 @@ struct PostView: View {
                                 .clipped()
                             Text(playlistItems[index].1)
                                 .foregroundColor(.black)
+                                .padding(.leading, 10)
                         }
-                        .padding(.vertical, 10)
+                        .padding(.vertical, 14)
                     })
-
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 38)
                 }
                 
-                NavigationLink(destination: CaptionView(finalPic: imageToDisplay, writtenCaption: playlistName), isActive: $isLoaded){
+                Spacer()
+                
+                NavigationLink(destination: CaptionView(finalPic: imageToDisplay, writtenCaption: playlistName), isActive: $isLoaded) {
                     EmptyView()
                 }
             }
         }
     }
-    func findImage(image: Image, caption: String){
+    
+    func findImage(image: Image, caption: String) {
         imageToDisplay = image
         playlistName = caption
         isLoaded = true
     }
 }
-
-
 
 #Preview {
     PostView()

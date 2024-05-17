@@ -17,7 +17,7 @@ struct CaptionView: View {
     var body: some View {
         NavigationView{
             VStack{
-                NavigationLink(destination: HomePageView(newPost: finalPic, newPlaylistName: writtenCaption , newCaption: newCaption), isActive: $isPosted){
+                NavigationLink(destination: HomePageView(posts: []), isActive: $isPosted){
                     EmptyView()
                 }
                 Text("New Post")

@@ -7,41 +7,37 @@
 
 import SwiftUI
 
-struct PostInfo{
+struct PostInfo {
     var postedPic: Image
     var postedPlaylistName: String
     var postedCaption: String
 }
 
 struct HomePageView: View {
-    @State var newPost: Image
-    @State var newPlaylistName: String
-    @State var newCaption: String
-    @State var posts: [Image] = []
+    @State var posts: [PostInfo]
 
     var body: some View {
         NavigationView {
             VStack {
                 Text("𝗜𝗻𝘀𝘁𝗮𝗳𝘆 [◉°]")
                     .font(.system(size: 30))
-                    .padding(.bottom, 2)
-                ForEach(posts.indices, id: \.self) { i in
-                    Button(action: {
-                        handleClick(index: i)
-                    }) {
-                    }
+                    .padding(.bottom, 30)
+                
+                ScrollView {
+                    PostsCustomView(posts: posts)
+                        .padding(.horizontal)
                 }
             }
+            .navigationBarHidden(true)
         }
-    }
-    
-    func handleClick(index: Int) {
-        // Handle click on post at the given index
-        // For example, navigate to post details view, etc.
     }
 }
 
-
 #Preview {
-    HomePageView(newPost: Image("lockIn"), newPlaylistName: "", newCaption: "")
+    HomePageView(posts: [
+        PostInfo(postedPic: Image("womenInStem"), postedPlaylistName: "women in stem", postedCaption: "hey girl hey"),
+        PostInfo(postedPic: Image("bffr"), postedPlaylistName: "bffr", postedCaption: "bffr"),
+        PostInfo(postedPic: Image("jrPromAye"), postedPlaylistName: "face card", postedCaption: "face card ayeeee"),
+        PostInfo(postedPic: Image("gtfo"), postedPlaylistName: "GTFO", postedCaption: "30 MILLIONDO")
+    ])
 }
