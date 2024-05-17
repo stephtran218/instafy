@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//this struct holds all the info for each post
 struct PostInfo {
     var postedPic: Image
     var postedPlaylistName: String
