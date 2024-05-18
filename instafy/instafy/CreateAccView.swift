@@ -18,7 +18,12 @@ struct PersonalInfo{
 struct CreateAccView: View {
     
     @State private var personalInfo = PersonalInfo(firstName: "", lastName: "", email: "", userName: "", password: "")
-
+    @State var postArray: [PostInfo] = [
+        PostInfo(postedPic: Image("womenInStem"), postedPlaylistName: "women in stem", postedCaption: "hey girl hey"),
+        PostInfo(postedPic: Image("bffr"), postedPlaylistName: "bffr", postedCaption: "bffr"),
+        PostInfo(postedPic: Image("jrPromAye"), postedPlaylistName: "face card", postedCaption: "face card ayeeee"),
+        PostInfo(postedPic: Image("gtfo"), postedPlaylistName: "GTFO", postedCaption: "30 MILLIONDO")
+    ]
     var body: some View {
         
         
@@ -49,13 +54,15 @@ struct CreateAccView: View {
                 SecureField("Password", text: $personalInfo.password)
                     .padding()
                     .border(Color.gray)
-//                NavigationLink(destination: HomePageView(newPost: <#T##Image#>, newPlaylistName: <#T##String#>, newCaption: <#T##String#>, posts: <#T##[Image]#>), label: {
-//                    Text("Create Account")
-//                        .padding()
-//                        .foregroundColor(.black)
-//                        .border(Color.black) // Border first
-//                })
-//                .padding()
+                NavigationLink(destination: HomePageView(posts: postArray)) {
+                    Text("Login")
+                        .padding()
+                        .border(Color.black, width: 1)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(15)
+                        .padding(.top, 20)
+                }
             }
             .padding()
         }
